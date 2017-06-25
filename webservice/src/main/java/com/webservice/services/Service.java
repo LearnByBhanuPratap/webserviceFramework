@@ -38,6 +38,14 @@ public class Service {
 		
 	}
 	
+	public Response getAllProducts(){
+		RequestSpecification requestSpecification = RestAssured.given();
+		requestSpecification.headers("content-type","application/json");
+		Response response = requestSpecification.get(URLBuilder.allproduct);
+		System.out.println(response.asString());
+		return response;
+	}
+	
 	public static void main(String[] args) {
 		//Service obj = new Service();
 		//obj.login("info.bhanupratap@gmail.com", "APP", "password");
